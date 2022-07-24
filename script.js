@@ -27,24 +27,19 @@ var passwordoutput = [];
 // Function to generate the random password.
 function generatePassword() {
   //Prompt for password length. 
-  var passwordLength = window.prompt("How many characters would you like your password to contain? (Choose between 8 and 128)")
-  if (passwordLength < 8 || passwordLength > 128) {
+  //ParseInt - function that takes something in and attempts to parse an interger.
+  var passwordLength = parseInt(window.prompt("How many characters would you like your password to contain? (Choose between 8 and 128)"))
+  if (passwordLength < 8 || passwordLength > 128 || typeof passwordLength !== "number") {
     alert("Password length must be between 8 and 128 characters.");
-    return;
+    return generatePassword();
   } else console.log("password length",passwordLength)
 
-  //Prompt for password options.
+  //Prompt for password options.  Confirm to add.
   var useLowerCase = confirm("Click OK to confirm including lowercase letters?");
-  // console.log(useLowerCase);
   var useUpperCase = confirm("Click OK to confirm including uppercase letters?");
-  // console.log(useUpperCase);
   var useNumeric = confirm("Click OK to confirm including numeric characters?");
-  // console.log(useNumeric);
   var useSpecialChar = confirm("Click OK to confirm including special characters?");
-  // console.log(useSpecialChar);
 
-
-  //Sets of combination for password selection.
   if (useLowerCase && useUpperCase && useNumeric && useSpecialChar) {
     container = lowerCase.concat(upperCase, numeric, specialChar);
   } else if (useLowerCase && useUpperCase && useNumeric) {
@@ -75,23 +70,25 @@ function generatePassword() {
     container = numeric;
   } else if (useSpecialChar) {
     container = specialChar;
-  } else (alert("You must pick at least 1"));
+  } else alert("You must pick at least 1");
 
-
-
-//Alternative solution maybe?  
-
+  //This will add arrays into your empty container depending on which options we confirm.
   // if (useLowerCase === true) {
-  //   container.concat(lowerCase);
+  //   container = container.concat(lowerCase);
   // }
   // if (useUpperCase === true) {
-  //   container.concat(upperCase);
+  //   container = container.concat(upperCase);
   // }
   // if (useNumeric === true) {
-  //   container.concat(numeric);
+  //   container = container.concat(numeric);
   // }
   // if (useSpecialChar === true) {
-  //   container.concat(specialChar);
+  //   container = container.concat(specialChar);
+  // }
+
+  // //in case none of the options were chosen.  
+  // if (!useLowerCase && !useUpperCase && !useNumeric && !useSpecialChar) {
+  //   alert ("You must choose at least 1 option"); return generatePassword();
   // }
   
   
