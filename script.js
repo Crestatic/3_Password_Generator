@@ -40,6 +40,7 @@ function generatePassword() {
   var useNumeric = confirm("Click OK to confirm including numeric characters?");
   var useSpecialChar = confirm("Click OK to confirm including special characters?");
 
+  //List of available options for password
   if (useLowerCase && useUpperCase && useNumeric && useSpecialChar) {
     container = lowerCase.concat(upperCase, numeric, specialChar);
   } else if (useLowerCase && useUpperCase && useNumeric) {
@@ -72,25 +73,6 @@ function generatePassword() {
     container = specialChar;
   } else alert("You must pick at least 1");
 
-  //This will add arrays into your empty container depending on which options we confirm.
-  // if (useLowerCase === true) {
-  //   container = container.concat(lowerCase);
-  // }
-  // if (useUpperCase === true) {
-  //   container = container.concat(upperCase);
-  // }
-  // if (useNumeric === true) {
-  //   container = container.concat(numeric);
-  // }
-  // if (useSpecialChar === true) {
-  //   container = container.concat(specialChar);
-  // }
-
-  // //in case none of the options were chosen.  
-  // if (!useLowerCase && !useUpperCase && !useNumeric && !useSpecialChar) {
-  //   alert ("You must choose at least 1 option"); return generatePassword();
-  // }
-  
   
 //This will randomize the password choice
   for (var i = 0; i < passwordLength; i++) {
