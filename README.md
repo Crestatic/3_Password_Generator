@@ -12,7 +12,7 @@ This week we were tasked with finishing up a Javascript code in order for the pa
 [Link](https://crestatic.github.io/3_Password_Generator/)
 
 ## Image of Website (Prompt)
-![alttext](./assets/prompt.PNG)
+![alttext](/assets/prompt.PNG)
 
 ## Image of Website (Outcome)
-![alttext](./assets/Outcome.PNG)
+![alttext](/assets/Outcome.PNG)
